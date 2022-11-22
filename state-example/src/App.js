@@ -7,11 +7,12 @@ function App() {
   const [count, setCount] = React.useState(0)
     
     function add() {
-        setCount(count + 1)
+        setCount(prevCount => prevCount + 1)
         }
     
     function subtract() {
-        setCount(count - 1)
+        setCount(function(oldvalue){
+          return (oldvalue - 1)})
     }
   return (
     <div className="counter">
